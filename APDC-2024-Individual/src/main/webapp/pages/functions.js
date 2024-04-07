@@ -65,7 +65,6 @@ function welcome() {
                 if(userRole === "USER"){
                     html += "<a href=" + "/pages/deleteUser.html" + ">Delete</a>";
                 } else if(userRole === "GBO"){
-                    html += "<a href=" + "/pages/changeRole.html" + ">Change role</a>";
                     html += "<a href=" + "/pages/changeState.html" + ">Change state</a>";
                 } else {
                     html += "<a href=" + "/pages/changeRole.html" + ">Change role</a>";
@@ -495,9 +494,8 @@ function list() {
                         htmlb += "<td>" + userAtts[9] + "</td>";
                         htmlb += "<td>" + userAtts[10] + "</td>";
                         htmlb += "<td><img src='" + userAtts[11] + "' alt='User Image' style='max-width: 100px; max-height: 100px;'></td>";
-                        // htmlb += "<td>" + userAtts[11] + "</td>";
                         htmlb += "<td>" + userAtts[12] + "</td>";
-                        htmlb += "<td>" + userAtts[13] + "</td>"; //14 é o do state tenho que ver o que é o 11
+                        htmlb += "<td>" + userAtts[13] + "</td>";
                         htmlb += "</tr>";    
                     }
                 }else {
