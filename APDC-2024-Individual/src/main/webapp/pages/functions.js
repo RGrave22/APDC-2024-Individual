@@ -74,7 +74,7 @@ function welcome() {
                 }
                 
                 container.innerHTML += html;
-            }else if(this.status === "403"){
+            }else if(this.status === 403){
                 alert(xhr.responseText);
                 window.location.href = "/pages/login.html";
             }
