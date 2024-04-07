@@ -487,8 +487,8 @@ public class ChangeResource {
 				|| (!data.name.equals(user.getString("Name")) && !data.name.equals("")) || (!data.name.equals(user.getString("Name")) && !data.name.equals(""))
 				|| (!data.profile.equals(user.getString("Profile")) && !data.profile.equals(""))
 				|| (!data.ocupation.equals(user.getString("Ocupation")) && !data.ocupation.equals("")) || (!data.workPlace.equals(user.getString("Work_Place")) && !data.workPlace.equals(""))
-				|| (!data.houseHold.equals(user.getString("Household"))&& !data.houseHold.equals("")) || (!data.CP.equals(user.getString("Codigo_Postal")) && !data.CP.equals(""))
-				||(!data.NIF.equals(user.getString("NIF")) && !data.NIF.equals("")) || (!data.foto.equals(""))
+				|| (!data.houseHold.equals(user.getString("Household"))&& !data.houseHold.equals("")) || (!data.CP.equals(user.getString("CP")) && !data.CP.equals(""))
+				|| (!data.NIF.equals(user.getString("NIF")) && !data.NIF.equals("")) || (!data.foto.equals(""))
 				|| (!data.role.equals(user.getString("Role"))&& !data.role.equals("")) || (!data.state.equals(user.getString("State"))) && !data.state.equals("")) {
 			return true;
 		}else {
