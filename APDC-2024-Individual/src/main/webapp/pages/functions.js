@@ -59,6 +59,21 @@ function welcome() {
                 const usernameOutput = document.getElementById("welcome");
                 usernameOutput.innerHTML += username + "!";
 
+                var container = document.getElementById("functions");
+                var html = "";
+
+                if(userRole === "USER"){
+                    html += "<a href=" + "/pages/deleteUser.html" + ">Delete</a>";
+                } else if(userRole === "GBO"){
+                    html += "a href=" + "/pages/changeRole.html" + ">Change role</a>";
+                    html += "<a href=" + "/pages/changeState.html" + ">Change state</a>";
+                } else {
+                    html += "a href=" + "/pages/changeRole.html" + ">Change role</a>";
+                    html += "<a href=" + "/pages/changeState.html" + ">Change state</a>";
+                    html += "<a href=" + "/pages/deleteUser.html" + ">Delete</a>";
+                }
+                
+                container.innerHTML += html;
             }else {
                 alert("Welcome failed");
             }
