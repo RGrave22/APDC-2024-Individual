@@ -24,8 +24,6 @@ function login() {
         }
     };  
     
-    console.log(JSON.stringify(document.cookie));
-    
     var dataToSend = JSON.stringify(
         {
             username: username, 
