@@ -15,4 +15,16 @@ public class PasswordData {
 		this.newPasswordConfirmation = newPasswordConfirmation;
 	}
 	
+
+
+	public boolean validPassword() {
+		
+		/* Verifies if the password contains upper and lower cases, numbers, special caracters and at least 8 caracters
+		 * 
+		 */
+		String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
+		return newPassword.matches(passwordPattern);
+	}
+
+
 }

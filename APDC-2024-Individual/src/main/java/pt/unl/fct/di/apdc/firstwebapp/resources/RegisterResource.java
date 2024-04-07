@@ -87,10 +87,6 @@ public class RegisterResource {
 			}else if(!data.validPassword()) {
 				txn.rollback();
 				return Response.status(Status.FORBIDDEN).entity(INVALID_PASSWORD).build();
-			
-//			}else if (!data.password.equals(data.confirmation)) {
-//				txn.rollback();
-//				return Response.status(Status.FORBIDDEN).entity(PASSWORD_CONFIRMATION_WRONG).build();
 				
 			}else if(datastore.get(userKey) != null || (data.username.toLowerCase().equals(ROOT) && rootAlreadyCreated)) {
 				txn.rollback();

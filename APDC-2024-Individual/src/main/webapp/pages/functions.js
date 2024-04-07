@@ -274,7 +274,7 @@ function deleteUser() {
 
 function changePassword() {
 
-    var lastPassword = document.getElementById("password").value;
+    var lastPassword = document.getElementById("lastPassword").value;
     var newPassword = document.getElementById("newPassword").value;
     var newPassconf = document.getElementById("newPassConf").value;
 

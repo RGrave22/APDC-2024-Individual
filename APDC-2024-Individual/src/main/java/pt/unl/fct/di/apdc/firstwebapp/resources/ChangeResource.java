@@ -103,6 +103,7 @@ public class ChangeResource {
 	
 	//Password change
 	private static String INCORRECT_PASSWORD = "Your actual password is incorrect.";
+	private static String NEW_PASS_NOT_VALID = "Invalid new password, password need to contain upper case, lower case, numbers, a special caracter and at least 8 characters";
 	
 	//Attributes change
 	private static String NO_PERMISSION_TO_CHANGE_USER = "You dont have permittions to change this user.";
@@ -236,6 +237,10 @@ public class ChangeResource {
 			}if(!data.actualPassword.equals(user.getString("Password"))) {
 				txn.rollback();
 				return Response.status(Status.FORBIDDEN).entity(INCORRECT_PASSWORD).build();
+			}else if (!data.validPassword()) {
+				txn.rollback();
+				return Response.status(Status.FORBIDDEN).entity(INCORRECT_PASSWORD).build();
+			}
 				
 			}else {	
 				Entity update = Entity.newBuilder(user)
