@@ -76,7 +76,7 @@ function welcome() {
                 container.innerHTML += html;
             }else if(this.status === 403){
                 alert(xhr.responseText);
-                window.location.href = "/pages/login.html";
+                logout();
             }else {
                 alert("Welcome page load failed");
             }
