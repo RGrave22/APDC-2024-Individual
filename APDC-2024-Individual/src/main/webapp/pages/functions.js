@@ -77,6 +77,8 @@ function welcome() {
             }else if(this.status === 403){
                 alert(xhr.responseText);
                 window.location.href = "/pages/login.html";
+            }else {
+                alert("Welcome page load failed");
             }
         }
     };  
