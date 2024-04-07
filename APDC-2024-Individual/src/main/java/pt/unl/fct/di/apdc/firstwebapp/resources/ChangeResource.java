@@ -199,7 +199,6 @@ public class ChangeResource {
 						.set("State", data.state)
 						.build();
 				txn.update(update);
-				LOG.fine("User's role sucessfully changed");
 				txn.commit();
 				return Response.ok().entity(data.username.toString() + UPDATED_STATE).build();
 			}
@@ -387,7 +386,7 @@ public class ChangeResource {
 		 					return Response.status(Status.FORBIDDEN).entity(NO_ATTRIBUTES_CHANGED).build();
 		 				}
 		 			}
-		 			return Response.ok().entity(username + ATTRIBUTES_CHANGED).build();
+		 			return Response.ok().entity(data.username + ATTRIBUTES_CHANGED).build();
 		 		}
 					
 		 	} finally {

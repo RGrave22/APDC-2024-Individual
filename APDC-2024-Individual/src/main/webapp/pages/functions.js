@@ -23,7 +23,7 @@ function login() {
             }
         }
     };  
-    
+
     var dataToSend = JSON.stringify(
         {
             username: username, 
@@ -376,8 +376,8 @@ function changeAttributes() {
         houseHold: household,
         CP: postalcode,
         NIF: nif,
-        state: state,
-        role: role
+        role: role,
+        state: state
     }
     
     if(!foto){
