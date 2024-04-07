@@ -299,7 +299,7 @@ function changePassword() {
     xhr.onreadystatechange = function () {
         if(xhr.readyState === 4 ) {
             if(xhr.status === 200){
-                alert("State changed");
+                alert(xhr.responseText);
                 window.location.href = "/pages/welcome.html";
             }else if(xhr.status === 410){
                 alert(xhr.responseText);
@@ -307,7 +307,7 @@ function changePassword() {
             }else if(xhr.status ===500){
                 window.location.href = "/pages/login.html";   
             }else {
-                alert("State change failed");
+                alert(xhr.responseText);
             }
         }
     };                      

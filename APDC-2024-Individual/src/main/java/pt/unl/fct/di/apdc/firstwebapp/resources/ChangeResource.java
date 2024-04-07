@@ -234,12 +234,12 @@ public class ChangeResource {
 				txn.rollback();
 				return Response.status(Status.FORBIDDEN).entity(USER_DONT_EXIST).build();
 				
-			}if(!data.actualPassword.equals(user.getString("Password"))) {
+			}if(!DigestUtils.sha512Hex(data.actualPassword).equals(user.getString("Password"))) {
 				txn.rollback();
 				return Response.status(Status.FORBIDDEN).entity(INCORRECT_PASSWORD).build();
 			}else if (!data.validPassword()) {
 				txn.rollback();
-				return Response.status(Status.FORBIDDEN).entity(INCORRECT_PASSWORD).build();
+				return Response.status(Status.FORBIDDEN).entity(NEW_PASS_NOT_VALID).build();
 				
 			}else {	
 				Entity update = Entity.newBuilder(user)
