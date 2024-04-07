@@ -240,7 +240,6 @@ public class ChangeResource {
 			}else if (!data.validPassword()) {
 				txn.rollback();
 				return Response.status(Status.FORBIDDEN).entity(INCORRECT_PASSWORD).build();
-			}
 				
 			}else {	
 				Entity update = Entity.newBuilder(user)
