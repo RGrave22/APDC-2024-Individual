@@ -246,7 +246,7 @@ function deleteUser() {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/rest/change/state', true);
+    xhr.open('POST', '/rest/delete', true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8"); 
     xhr.onreadystatechange = function () {
         if(xhr.readyState === 4 ) {

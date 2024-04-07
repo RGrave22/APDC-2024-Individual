@@ -99,7 +99,6 @@ public class RemoveUsersResource {
 				
 			}else {	
 				txn.delete(userKey);
-				LOG.fine("User's sucessfully deleted");
 				txn.commit();
 				return Response.ok().entity(data.username + DELETED).build();
 			}
