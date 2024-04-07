@@ -65,10 +65,10 @@ function welcome() {
                 if(userRole === "USER"){
                     html += "<a href=" + "/pages/deleteUser.html" + ">Delete</a>";
                 } else if(userRole === "GBO"){
-                    html += "a href=" + "/pages/changeRole.html" + ">Change role</a>";
+                    html += "<a href=" + "/pages/changeRole.html" + ">Change role</a>";
                     html += "<a href=" + "/pages/changeState.html" + ">Change state</a>";
                 } else {
-                    html += "a href=" + "/pages/changeRole.html" + ">Change role</a>";
+                    html += "<a href=" + "/pages/changeRole.html" + ">Change role</a>";
                     html += "<a href=" + "/pages/changeState.html" + ">Change state</a>";
                     html += "<a href=" + "/pages/deleteUser.html" + ">Delete</a>";
                 }

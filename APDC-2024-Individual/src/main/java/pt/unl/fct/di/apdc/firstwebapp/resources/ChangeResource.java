@@ -243,7 +243,7 @@ public class ChangeResource {
 				
 			}else {	
 				Entity update = Entity.newBuilder(user)
-						.set("Password", data.newPassword)
+						.set("Password", DigestUtils.sha512Hex(data.newPassword))
 						.build();
 				txn.update(update);
 				LOG.fine("User's role sucessfully changed");
