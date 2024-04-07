@@ -67,7 +67,6 @@ public class welcome {
 			Entity user = datastore.get(userKey);
 			
 			if(datastore.get(userKey) == null) {
-				txn.rollback();
 				return Response.status(Status.FORBIDDEN).entity(USER_DONT_EXIST).build();
 			}
 		
