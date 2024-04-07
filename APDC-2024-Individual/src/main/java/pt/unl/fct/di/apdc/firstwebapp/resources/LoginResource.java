@@ -100,8 +100,7 @@ public class LoginResource {
 									
 				LOG.fine("sucessfull login welcome back " + data.username);
 				
-				return Response.ok().cookie(cookie).entity(cookie.getValue()).build();	
-				// return Response.ok().cookie(cookie).build();	
+				return Response.ok().cookie(cookie).entity(cookie.getValue()).build();		
 			}
 	}
 	
