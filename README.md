@@ -11,8 +11,19 @@ mvn package appengine:run
 mvn package -e -X appengine:deploy -Dapp.deploy.projectId=bionic-charge-415916 -Dapp.deploy.version=7
 
 
+USERS NO LOCAL:
 
+root -> SU
+jac -> SU
 
+jec -> GA
+
+joca -> GBO
+
+jose1 -> USER
+
+PASSWORD ACEITE:
+PpaSs1!%!
 
 
 
