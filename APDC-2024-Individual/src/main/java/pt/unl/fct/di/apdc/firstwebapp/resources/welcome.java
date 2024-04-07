@@ -50,13 +50,26 @@ public class welcome {
 	 * Logger Object
 	 */
 	private static final Logger LOG = Logger.getLogger(LoginResource.class.getName());
+
+	private static String USER_DONT_EXIST = "User doesn't exist.";
+
+	private final Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 	
 	public welcome() {} //Nothing to be done here
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	//@Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
 	public Response doWelcome(@CookieParam("session::apdc") Cookie cookie) {
+
+			String username = LoginResource.getUsername(cookie);
+
+			Key userKey = datastore.newKeyFactory().setKind("User").newKey(username);
+			Entity user = datastore.get(userKey);
+			
+			if(datastore.get(userKey) == null) {
+				txn.rollback();
+				return Response.status(Status.FORBIDDEN).entity(USER_DONT_EXIST).build();
+			}
 		
 		return Response.ok().entity(cookie.getValue()).build();
 
